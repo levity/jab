@@ -4,7 +4,7 @@ require 'xmpp4r'
 module Jab
   include Jabber
   
-  def self.jab(opts)
+  def self.jab(opts={})
     if [:from, :password, :to, :text].any?{|x| !opts.include? x }
       raise ArgumentError, "you must specify :from, :to, :text"
     end
